@@ -1,0 +1,52 @@
+<html>
+<head>
+<title>com.jbehave.stories.my</title>
+<style type="text/css" media="all">
+@import url( "./style/jbehave-core.css" );
+</style>
+</head>
+<body>
+ 
+<script type="syntaxhighlighter" class="brush: txt"><![CDATA[
+
+(com/jbehave/stories/my.story)
+Narrative:
+As a developer
+I want to add and remove numbers from the list
+So that I can use the basic list functionality
+Scenario: A number can be added to the list
+Given an empty list
+When I add a number 123
+Then size becomes 1 and the list contains 123
+
+Scenario: 
+When I remove number 123 (FAILED)
+(java.lang.IndexOutOfBoundsException: Index: 123, Size: 1)
+Then the list is empty (NOT PERFORMED)
+
+
+
+]]></script>
+</body>
+<!--  SyntaxHighlighter resources:  should be included at end of body -->
+<link rel="stylesheet" type="text/css" href="./style/sh-3.0.83/shCore.css"/>
+<link rel="stylesheet" type="text/css" href="./style/sh-3.0.83/shThemeRDark.css"/>
+<script language="javascript" src="./js/sh-3.0.83/shCore.js"></script>
+<script language="javascript" src="./js/sh-3.0.83/shBrushBash.js"></script>
+<script language="javascript" src="./js/sh-3.0.83/shBrushCss.js"></script>
+<script language="javascript" src="./js/sh-3.0.83/shBrushDiff.js"></script>
+<script language="javascript" src="./js/sh-3.0.83/shBrushGroovy.js"></script>
+<script language="javascript" src="./js/sh-3.0.83/shBrushJava.js"></script>
+<script language="javascript" src="./js/sh-3.0.83/shBrushJScript.js"></script>
+<script language="javascript" src="./js/sh-3.0.83/shBrushPlain.js"></script>
+<script language="javascript" src="./js/sh-3.0.83/shBrushPython.js"></script>
+<script language="javascript" src="./js/sh-3.0.83/shBrushRuby.js"></script>
+<script language="javascript" src="./js/sh-3.0.83/shBrushScala.js"></script>
+<script language="javascript" src="./js/sh-3.0.83/shBrushXml.js"></script>
+<script language="javascript" src="./js/shBrushBdd.js"></script>
+<script type="text/javascript">
+    SyntaxHighlighter.defaults['gutter'] = false;
+    SyntaxHighlighter.defaults['toolbar'] = false;    
+    SyntaxHighlighter.all();
+</script>
+</html>
