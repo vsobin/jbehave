@@ -6,11 +6,9 @@
 </narrative>
 <scenario keyword="Scenario:" title="A number can be added to the list">
 <step outcome="successful">Given an empty list</step>
-<step outcome="successful">When I add a number <parameter>123</parameter></step>
-<step outcome="successful">Then size becomes <parameter>1</parameter> and the list contains <parameter>123</parameter></step>
-</scenario>
-<scenario keyword="Scenario:" title="">
-<step outcome="failed" keyword="FAILED">When I remove number <parameter>123</parameter><failure>java.lang.IndexOutOfBoundsException: Index: 123, Size: 1</failure></step>
-<step outcome="notPerformed" keyword="NOT PERFORMED">Then the list is empty</step>
+<step outcome="successful">When I add a number <parameter>666</parameter></step>
+<step outcome="successful">Then size becomes <parameter>1</parameter> and the list contains <parameter>666</parameter></step>
+<step outcome="successful">When I remove <parameter>1</parameter> number</step>
+<step outcome="successful">Then the list is empty</step>
 </scenario>
 </story>
