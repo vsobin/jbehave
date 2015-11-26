@@ -1,8 +1,10 @@
 package com.jbehave.steps;
+
 import org.jbehave.core.annotations.Given;
 import org.jbehave.core.annotations.Then;
 import org.jbehave.core.annotations.When;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 import java.util.ArrayList;
@@ -12,8 +14,8 @@ import static org.junit.Assert.assertTrue;
 
 public class MySteps {
 
-    private ArrayList<Integer> list;
     WebDriver driver;
+    private ArrayList<Integer> list;
 
     @Given("an empty list")
     public void anEmptyList() {
@@ -52,10 +54,15 @@ public class MySteps {
 
             case ("Firefox"):
                 driver = new FirefoxDriver();
+                break;
+
+            case("Chrome"):
+                System.setProperty("webdriver.chrome.driver","C:/chromedriver.exe");
+                driver = new ChromeDriver();
+            break;
 
             default:
                 System.out.println("TEST");
-//        driver = new FirefoxDriver();
         }
         driver.manage().window().maximize();
     }

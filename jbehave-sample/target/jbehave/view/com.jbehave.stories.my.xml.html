@@ -21,8 +21,13 @@
 <step outcome="successful">When I remove <parameter>1</parameter> number</step>
 <step outcome="successful">Then the list is empty</step>
 </scenario>
-<scenario keyword="Scenario:" title="Selenium">
+<scenario keyword="Scenario:" title="Selenium with FF">
 <step outcome="successful">Given That i&apos;m using <parameter>Firefox</parameter></step>
+<step outcome="successful">When I&apos;m navigating to <parameter>https://www.google.com.ua/</parameter></step>
+<step outcome="successful">Then I&apos;m closing the browser</step>
+</scenario>
+<scenario keyword="Scenario:" title="Selenium with Chrome">
+<step outcome="successful">Given That i&apos;m using <parameter>Chrome</parameter></step>
 <step outcome="successful">When I&apos;m navigating to <parameter>https://www.google.com.ua/</parameter></step>
 <step outcome="successful">Then I&apos;m closing the browser</step>
 </scenario>

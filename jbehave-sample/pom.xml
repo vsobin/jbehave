@@ -11,7 +11,7 @@
         <jbehave.core.version>4.0.3</jbehave.core.version>
         <jbehave.site.version>3.3</jbehave.site.version>
         <embeddables>**/*Stories.java</embeddables>
-    </properties>
+</properties>
 
     <dependencies>
         <dependency>
@@ -23,7 +23,7 @@
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-chrome-driver</artifactId>
-            <version>2.47.1</version>
+            <version>2.48.1</version>
         </dependency>
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
