@@ -1,8 +1,9 @@
 package com.jbehave.steps;
-
 import org.jbehave.core.annotations.Given;
 import org.jbehave.core.annotations.Then;
 import org.jbehave.core.annotations.When;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 
 import java.util.ArrayList;
 
@@ -10,8 +11,9 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 public class MySteps {
-    private ArrayList<Integer> list;
 
+    private ArrayList<Integer> list;
+    WebDriver driver;
 
     @Given("an empty list")
     public void anEmptyList() {
@@ -41,6 +43,31 @@ public class MySteps {
     public void listIsEmpty() {
         assertTrue(list.isEmpty());
         System.out.println("Number was removed and current size is: " + list.size());
+    }
+
+    @Given("That i'm using $browser")
+    public void getBrowser(String browser) {
+
+        switch (browser) {
+
+            case ("Firefox"):
+                driver = new FirefoxDriver();
+
+            default:
+                System.out.println("TEST");
+//        driver = new FirefoxDriver();
+        }
+        driver.manage().window().maximize();
+    }
+
+    @When("I'm navigating to $page")
+    public void navigateToPage(String url) {
+        driver.get(url);
+    }
+
+    @Then("I'm closing the browser")
+    public void closeTheBrowser() {
+        driver.close();
     }
 
 }

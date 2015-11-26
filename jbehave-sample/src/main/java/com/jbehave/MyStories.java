@@ -30,10 +30,10 @@ import static org.jbehave.core.reporters.Format.*;
  * </p>
  * <p>
  * Stories are specified in classpath and correspondingly the {@link LoadFromClasspath} story loader is configured.
- * </p> 
+ * </p>
  */
 public class MyStories extends JUnitStories {
-    
+
     public MyStories() {
         configuredEmbedder().embedderControls().doGenerateViewAfterStories(true).doIgnoreFailureInStories(true)
                 .doIgnoreFailureInView(true).useThreads(2);
@@ -50,13 +50,13 @@ public class MyStories extends JUnitStories {
         parameterConverters.addConverters(new DateConverter(new SimpleDateFormat("yyyy-MM-dd")),
                 new ExamplesTableConverter(examplesTableFactory));
         return new MostUsefulConfiguration()
-            .useStoryLoader(new LoadFromClasspath(embeddableClass))
-            .useStoryParser(new RegexStoryParser(examplesTableFactory)) 
-            .useStoryReporterBuilder(new StoryReporterBuilder()
-                .withCodeLocation(CodeLocations.codeLocationFromClass(embeddableClass))
-                .withDefaultFormats()
-                .withFormats(CONSOLE, TXT, HTML, XML))
-            .useParameterConverters(parameterConverters);
+                .useStoryLoader(new LoadFromClasspath(embeddableClass))
+                .useStoryParser(new RegexStoryParser(examplesTableFactory))
+                .useStoryReporterBuilder(new StoryReporterBuilder()
+                        .withCodeLocation(CodeLocations.codeLocationFromClass(embeddableClass))
+                        .withDefaultFormats()
+                        .withFormats(CONSOLE, TXT, HTML, XML))
+                .useParameterConverters(parameterConverters);
     }
 
     @Override
@@ -67,7 +67,7 @@ public class MyStories extends JUnitStories {
     @Override
     protected List<String> storyPaths() {
         return new StoryFinder().findPaths(codeLocationFromClass(this.getClass()), "**/*.story", "**/excluded*.story");
-                
+
     }
 
 }

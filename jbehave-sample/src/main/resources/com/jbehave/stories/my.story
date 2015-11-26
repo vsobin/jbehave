@@ -11,5 +11,7 @@ Then size becomes 1 and the list contains 666
 When I remove 1 number
 Then the list is empty
 
-
-
+Scenario: Selenium
+Given That i'm using Firefox
+When I'm navigating to https://www.google.com.ua/
+Then I'm closing the browser
